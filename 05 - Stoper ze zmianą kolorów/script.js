@@ -33,14 +33,15 @@ const handleStart = () => {
         if (seconds < 9) {
             seconds++;
             stopwatch.textContent = `${minutes}:0${seconds}`
-        } else if (seconds >= 9 && seconds < 60) {
+        } else if (seconds >= 9 && seconds < 59) {
+            seconds++;
             stopwatch.textContent = `${minutes}:${seconds}`
         } else {
             minutes++;
             seconds = 0;
             stopwatch.textContent = `${minutes}:00`
         }
-    }, 1000);
+    }, 100);
 }
 
 const handleStop = () => {
